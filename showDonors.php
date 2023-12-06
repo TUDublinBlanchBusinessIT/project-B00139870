@@ -9,7 +9,7 @@ $sql = "select * from donor";
 
 //echo $sql; 
 $result = mysqli_query($conn, $sql); 
-echo "<TABLE broder ='1'>";
+echo "<TABLE border ='1'>";
 while($row=mysqli_fetch_assoc($result)) {
     $fn = $row['firstname'];
     $sn = $row['surname'];   

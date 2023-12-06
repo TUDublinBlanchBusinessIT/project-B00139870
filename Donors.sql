@@ -74,5 +74,12 @@ INSERT INTO Receive (Donor_ID, Admin_ID, Blood_Type, Quantity, Receive_Date)
 VALUES (1, 1, 'A+', 20, '2023-12-05'),
        (2, 2, 'B+', 30, '2023-12-06'),
        (3, 3, 'O-', 15, '2023-12-07');
+       
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
 
 

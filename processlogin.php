@@ -1,27 +1,34 @@
 <?php
-session_start();
 
-include("dbcon.php"); 
+$user = $_POST['username'];
+$pass = $_POST['password'];
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+require("dbcon.php"); 
 
-$sql = "SELECT id, username, password FROM users WHERE username = '$username'";
+echo "username".$user;
+echo "<br>";
+echo "password".$pass;
+echo "<br>";
+
+$sql = "SELECT password FROM user WHERE username = '$user'";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_assoc($result);
+$dbpassword = null; 
+
+while ($row = $result->fetch_assoc()) {
     $dbpassword = $row['password'];
-
-    if ($dbpassword === $password) {
-        echo "Password matched for user: $username";
-
-    } else {
-        echo "Password does not match";
-    }
-} else {
-    echo "User not found";
 }
-
-mysqli_close($conn);
+echo "dbpass". $dbpassword;
+echo "<br>";
+echo "pass".$password;
+if ($dbpassword == $password) {
+    session_start();
+    $_SESSION['username'] = $username; 
+    //header('Location: loggedIn.html'); 
+    echo 'matched';
+     
+} else {
+    //header('Location: loginTryAgain.html'); 
+    echo 'not matched';
+}
 ?>

@@ -8,11 +8,28 @@
         Firstname: <input type="text" name="fname"><br>
         Surname: <input type="text" name="sname"><br>
         Date of Birth: <input type="date" name="dob"><br>
-        Age: <input type="text" name="age"><br>
-        Blood Group: <input type="text" name="blood_group"><br>
+       Age: <input type="range" name="age" min="18" max="100" oninput="showAge(this.value)"><span id="ageValue">18</span><br>
+        Blood Group: 
+        <select name="blood_group">
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            
+        </select><br>
         Contact Number: <input type="text" name="number"><br>
         
         <input type="submit" >
     </form>
+    <script>
+        // Function to display the current value of the age slider
+        function showAge(val) {
+            document.getElementById('ageValue').textContent = val;
+        }
+    </script>
 </body>
 </html>

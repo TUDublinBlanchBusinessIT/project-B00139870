@@ -2,29 +2,83 @@
 <html>
 <head>
     <title>Donor Form</title>
+    <style>
+        
+        form {
+            border: 3px solid #f1f1f1;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        
+        button {
+            background-color: #E9FF33;
+            color: black;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        
+        button:hover {
+            opacity: 0.8;
+        }
+
+        
+
+        
+        .container {
+            padding: 16px;
+        }
+
+        
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+        }
+    </style>
 </head>
 <body>
     <form action="processDonors.php" method="post">
-        Firstname: <input type="text" name="fname"><br>
-        Surname: <input type="text" name="sname"><br>
-        Date of Birth: <input type="date" name="dob"><br>
-       Age: <input type="range" name="age" min="18" max="100" oninput="showAge(this.value)"><span id="ageValue">18</span><br>
-        Blood Group: 
-        <select name="blood_group">
-            <option value="A+">A+</option>
-            <option value="A-">A-</option>
-            <option value="B+">B+</option>
-            <option value="B-">B-</option>
-            <option value="AB+">AB+</option>
-            <option value="AB-">AB-</option>
-            <option value="O+">O+</option>
-            <option value="O-">O-</option>
-            
-        </select><br>
-        Contact Number: <input type="text" name="number"><br>
-        
-        <input type="submit" >
+        <div class="container">
+            Firstname: <input type="text" name="fname"><br>
+            Surname: <input type="text" name="sname"><br>
+            Date of Birth: <input type="date" name="dob"><br>
+            Age: <input type="range" name="age" min="18" max="100" oninput="showAge(this.value)"><span id="ageValue">18</span><br>
+            Blood Group: 
+            <select name="blood_group">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br>
+            Contact Number: <input type="text" name="number"><br>
+            <button type="submit">Submit</button>
+        </div>
     </form>
+
     <script>
         // Function to display the current value of the age slider
         function showAge(val) {

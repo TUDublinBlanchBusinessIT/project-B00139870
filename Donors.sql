@@ -75,11 +75,19 @@ VALUES (1, 1, 'A+', 20, '2023-12-05'),
        (2, 2, 'B+', 30, '2023-12-06'),
        (3, 3, 'O-', 15, '2023-12-07');
        
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+DROP TABLE IF EXISTS user;
+
+CREATE TABLE user (
+    donUserID INT AUTO_INCREMENT PRIMARY KEY,
+    firstName VARCHAR(20),
+    SurName VARCHAR(20),
+    username VARCHAR(20),
+    password VARCHAR(20) 
 );
+
+INSERT INTO user (firstName, SurName, username, password) VALUES('Kelly', 'Taylor','kelly1','kellypwd');
+INSERT INTO user (firstName, SurName, username, password) VALUES('Bill','Jones','Bill2','Billpwd');
+
 
 
 

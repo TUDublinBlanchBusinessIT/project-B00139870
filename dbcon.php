@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('Europe/London'); // Corrected timezone identifier
+date_default_timezone_set('Europe/London'); 
 
 $servername = "localhost";
 $username = "root";

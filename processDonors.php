@@ -1,10 +1,15 @@
 <?php
+date_default_timezone_set('Europe/London');
 $fn = $_POST['fname'];
 $sn = $_POST['sname'];
 $dob = $_POST['dob'];
 $age = $_POST['age'];
 $bloodGroup = $_POST['blood_group'];
 $contactNumber = $_POST['number'];
+
+$dateOfBirth = new DateTime($dob);
+$today = new DateTime();
+$age = $today->diff($dateOfBirth)->y;
 
 include("dbcon.php");
 

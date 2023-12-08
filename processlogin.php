@@ -1,20 +1,7 @@
 <?php
-session_start();
+include("session.php");
 
-// Check for session inactivity
-if (isset($_SESSION['username'])) {
-    $inactive = 60; // Timeout in 10 mins
-    $session_life = time() - $_SESSION['login_time_stamp'];
 
-    // If the session is inactive for more than the specified duration, destroy the session
-    if ($session_life > $inactive) {
-        session_unset();
-        session_destroy();
-        header("Location: LoginForm.html");
-        exit(); // Always include an exit() after a header redirect
-        
-    }
-}
 $user = $_POST['username'];
 $pass = $_POST['password'];
 
